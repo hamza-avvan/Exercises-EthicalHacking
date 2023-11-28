@@ -10,7 +10,7 @@ def download():
         abort (400, 'Directory Traversal Detected')
     
     absolute_path = os.path.join(app.root_path, 'downloads', file)
-    print(absolute_path)
+
     if os.path.isfile(absolute_path):
         return send_file (absolute_path)
     else:
